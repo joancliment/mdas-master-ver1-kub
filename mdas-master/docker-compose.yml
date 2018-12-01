@@ -1,0 +1,22 @@
+version: "3.6"
+
+services:
+  votingapp:
+    image: ${REGISTRY:-joancliment}/votingapp
+    build:
+      context: ./src/votingapp
+      dockerfile: Dockerfile
+    environment: 
+      REDIS: database:6379
+    ports:
+      - 8080:80
+
+  database:
+    image: redis
+  
+  votingapp-test:
+    image: votingapp-test
+    build:
+      context: ./test
+    environment: 
+      VOTING_URL: http://votingapp/vote

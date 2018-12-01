@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceName": {
+            "value": "${NAME}"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "dnsPrefix": {
+            "value": "mdas"
+        },
+        "osDiskSizeGB": {
+            "value": 0
+        },
+        "agentCount": {
+            "value": 1
+        },
+        "agentVMSize": {
+            "value": "Standard_B2s"
+        },
+        "servicePrincipalClientId": {
+            "value": "${CLIENT_ID}"
+        },
+        "servicePrincipalClientSecret": {
+            "value": "${CLIENT_SECRET}"
+        },
+        "osType": {
+            "value": "Linux"
+        },
+        "kubernetesVersion": {
+            "value": "1.11.4"
+        },
+        "enableHttpApplicationRouting": {
+            "value": false
+        },
+        "networkPlugin": {
+            "value": "kubenet"
+        },
+        "maxPods": {
+            "value": 30
+        },
+        "enableRBAC": {
+            "value": false
+        }
+    }
+}
